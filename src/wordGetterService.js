@@ -1,17 +1,10 @@
-export function wordGetter() {
-  let request = new XMLHttpRequest();
-  const url = `http://dinoipsum.herokuapp.com/api/?format=text`;
-
-  request.onreadystatechange = function() {
-    if (this.readystate === 4 && this.status === 200) {
-      // const response = JSON.parse(this.responseText);
-      const response = this.responseText;
-      // eslint-disable-next-line no-console
-      console.log(response);
-      return response[0][0];
-    }
-  };
-
-  request.open('GET', url, true);
-  request.send();
+export async function wordGetter() {
+  let response = await fetch(`http://dinoipsum.herokuapp.com/api/?format=json&words=10&paragraph=1`);
+  let dinos;
+  if (response.ok && response.status === 200) {
+    dinos = await response.json();
+  } else {
+    dinos = false;
+  }
+  return dinos[0][0];
 }
