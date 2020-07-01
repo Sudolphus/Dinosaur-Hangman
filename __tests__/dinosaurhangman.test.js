@@ -25,4 +25,9 @@ describe("Dinosaur Hangman", ()=>{
     board.newWord('stegosaurus');
     expect(board.word).toEqual(['S', 'T', 'E', 'G', 'O', 'S', 'A', 'U', 'R', 'U', 'S']);
   });
+
+  test('should create a display object for showing to the user', ()=>{
+    board.newWord('stegosaurus');
+    expect(board.display).toEqual([null, null, null, null, null, null, null, null, null, null, null]);
+  });
 });
