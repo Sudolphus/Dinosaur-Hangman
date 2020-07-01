@@ -23,4 +23,12 @@ export class Board {
       return false;
     }
   }
+
+  replaceNull(input, userInputIndices) {
+    if(userInputIndices) {
+      userInputIndices.forEach(i => {
+        this.display[i] = input;
+      });
+    }
+  }
 }

@@ -38,4 +38,14 @@ describe("Dinosaur Hangman", ()=>{
     expect(board.letterMatch(userInput)).toEqual([0, 5, 10]);
     expect(board.letterMatch(doesNotExist)).toEqual(false);
   });
+
+  test('should replace all letters in display that match the user input', () => {
+    const userInput = 'S';
+    const doesNotExist = 'Q';
+    const userInputIndices = board.letterMatch(userInput);
+    const doesNotExistIndices = board.letterMatch(doesNotExist);
+    board.replaceNull(userInput, userInputIndices);
+    board.replaceNull(doesNotExist, doesNotExistIndices);
+    expect(board.display).toEqual(['S', null, null, null, null, 'S', null, null, null, null, 'S']);
+  });
 });
