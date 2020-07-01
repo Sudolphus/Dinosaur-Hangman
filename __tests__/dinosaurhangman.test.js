@@ -6,7 +6,7 @@ describe("Dinosaur Hangman", ()=>{
 
   beforeEach(()=>{
     board = new Board();
-    board.word = 'Stegosaurus';
+    board.newWord('stegosaurus');
   });
 
   test('should create a board object', ()=>{
@@ -27,7 +27,15 @@ describe("Dinosaur Hangman", ()=>{
   });
 
   test('should create a display object for showing to the user', ()=>{
-    board.newWord('stegosaurus');
     expect(board.display).toEqual([null, null, null, null, null, null, null, null, null, null, null]);
+    board.newWord('diplodocus');
+    expect(board.display.length).toEqual(board.word.length);
+  });
+
+  test('should find all letters in the word that match input', () => {
+    const userInput = 'S';
+    const doesNotExist = 'Q';
+    expect(board.letterMatch(userInput)).toEqual([0, 5, 10]);
+    expect(board.letterMatch(doesNotExist)).toEqual(false);
   });
 });

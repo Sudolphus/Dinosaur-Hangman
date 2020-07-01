@@ -18,7 +18,7 @@ _An app for playing a game of hangman using dinosaur names._
 | **Program instatiates the word object with a dinosaur word** | None Necessary | Board = {word = {'Stegosaurus'}} |
 | **Program splits the word into letters** | None Necessary | Board = {word = {[S, T, E, G, O, S, A, U, R, U, S]}} |
 | **Program has a display object for showing the user** | None Necessary | Board = {word = [S, T, E, G, O, S, A, U, R, U, S], display = [null, null, null, null, null, null, null, null, null, null, null]} |
-| **Program gatheres user input** | User clicks S | userInput = 'S' |
+| **Program gathers user input** | User clicks S | userInput = 'S' |
 | **Program finds all letters in the word that match the input** | User Clicks S | indices = [0, 5, 10] |
 | **Program updates display object with the matching letters** | None Necessary | Board = {... display = [S, null, null, null, null, S, null, null, null, null, S]} |
 | **Program detects if a game is won** | display = {[S, T, E, G, O, S, A, U, R, U, S]} | "You Win" |
