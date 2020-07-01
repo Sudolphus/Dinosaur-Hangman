@@ -40,4 +40,12 @@ export class Board {
       this.guessesRemaining--;
     }
   }
+
+  gameStatus() {
+    if (!this.display.includes(null)) {
+      return 'win';
+    } else if (this.guessesRemaining === 0) {
+      return 'loss';
+    }
+  }
 }

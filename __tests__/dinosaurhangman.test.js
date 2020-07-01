@@ -54,5 +54,15 @@ describe("Dinosaur Hangman", ()=>{
     expect(board.guessesRemaining).toEqual(9);
     board.makeGuess(userInput);
     expect(board.guessesRemaining).toEqual(9);
-  }); 
+  });
+
+  test('should detect if a game is won', () => {
+    board.display = ['S', 'T', 'E', 'G', 'O', 'S', 'A', 'U', 'R', 'U', 'S'];
+    expect(board.gameStatus()).toEqual("win");
+  });
+
+  test('should detect if a game is lost', () => {
+    board.guessesRemaining = 0;
+    expect(board.gameStatus()).toEqual('loss');
+  });
 });
