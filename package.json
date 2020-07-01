@@ -1,7 +1,7 @@
 {
-  "name": "default",
+  "name": "dinosaurhangman",
   "version": "1.0.0",
-  "description": "",
+  "description": "A game of hangman with dinosaurs",
   "main": "index.js",
   "scripts": {
     "build": "webpack --mode development",
@@ -11,7 +11,7 @@
     "debug": "node --inspect-brk node_modules/jest/bin/jest --runInBand"
   },
   "keywords": [],
-  "author": "",
+  "author": "Micheal Hansen and Brittany Lindgren",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.6.4",
