@@ -1,19 +1,28 @@
-# _{Application Name}_
+# _Dinosaur Hangman_
 
-#### _{Brief description of application}, {Date of current version}_
+#### _Play a game of hangman with dinosaur names, 07.01.2020_
 
-#### By _**Micheal Hansen**_
+#### By _**Micheal Hansen & Brittany Lindgren**_
 
 ## Description
 
-_{This is a detailed description of your application. Its purpose and usage.  Give as much detail as needed to explain what the application does, and any other information you want users or other developers to have. }_
+_An app for playing a game of hangman using dinosaur names._
 
 ## Specifications
 
 | Spec | Input | Output |
 | :-------------     | :------------- | :------------- |
-| **Homepage** | User accesses localhost:5004 | Homepage with user input form |
-| **Program Gathers User Input** | User input: "10" | Output: "10" |
+| **Program defines a board object** | User clicks New Game | Board = {} |
+| **Program defines a word object** | User clicks New Word | Board = {word = {}} |
+| **Program tracks guesses remaining** | None necessary | Board = {guessesRemaining = 10} |
+| **Program instatiates the word object with a dinosaur word** | None Necessary | Board = {word = {'Stegosaurus'}} |
+| **Program splits the word into letters** | None Necessary | Board = {word = {[S, T, E, G, O, S, A, U, R, U, S]}} |
+| **Program has a display object for showing the user** | None Necessary | Board = {word = [S, T, E, G, O, S, A, U, R, U, S], display = [null, null, null, null, null, null, null, null, null, null, null]} |
+| **Program gatheres user input** | User clicks S | userInput = 'S' |
+| **Program finds all letters in the word that match the input** | User Clicks S | indices = [0, 5, 10] |
+| **Program updates display object with the matching letters** | None Necessary | Board = {... display = [S, null, null, null, null, S, null, null, null, null, S]} |
+| **Program detects if a game is won** | display = {[S, T, E, G, O, S, A, U, R, U, S]} | "You Win" |
+| **Program detects if a game is lost** | guessesRemaining = 0 | "Game Over" |
 
 
 ## Setup/Installation Requirements
@@ -28,20 +37,17 @@ Open by downloading:
 
 Open via Bash/GitBash:
 1. Clone this repository onto your computer:
-`git clone {PUT_REPO_HERE}`
-2. Navigate into the `{NAME_OF_DIRECTORY}` directory in Visual Studio Code or preferred text editor
+`git clone https://github.com/Sudolphus/Dinosaur-Hangman`
+2. Navigate into the `Dinosaur-Hangman` directory in Visual Studio Code or preferred text editor
 `code .`
 3. Get the necessary packages `npm install`.
 4. Compile the code `npm run build`.
 5. Open index.html in Chrome or preferred browser:
 `open dist/index.html`
 
-#### To see my live website go to {GH_PAGES_LINK_HERE}!
-
-
 ## Known Bugs
 
-_{Are there issues that have not yet been resolved that you want to let users know you know?  Outline any issues that would impact use of your application.  Share any workarounds that are in place. }_
+_None currently_
 
 ## Support and contact details
 
@@ -58,4 +64,4 @@ _Please reach out through my GitHub account._
 
 MIT License.
 
-Copyright (c) 2020 **_Micheal Hansen_**
+Copyright (c) 2020 **_Micheal Hansen & Brittany Lindgren_**
