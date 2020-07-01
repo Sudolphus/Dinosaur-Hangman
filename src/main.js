@@ -2,12 +2,11 @@ import $ from 'jQuery';
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles.css';
-import { WordGetterService } from './wordGetterService';
+import { wordGetter } from './wordGetterService';
 
 $(document).ready(function() {
   $('#newGame').click(function() {
-    let wordGetterService = new WordGetterService();
-    const dinoWord = wordGetterService.wordGetter();
+    const dinoWord = wordGetter();
     $("#wordOutput").html(`<p>${dinoWord}</p>`);
   });
 });
