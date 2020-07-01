@@ -5,6 +5,6 @@ export class Board {
   }
 
   newWord(word) {
-
+    this.word = word.toUpperCase().split('');
   }
 }
