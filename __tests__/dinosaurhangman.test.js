@@ -65,4 +65,5 @@ describe("Dinosaur Hangman", ()=>{
     board.guessesRemaining = 0;
     expect(board.gameStatus()).toEqual('loss');
   });
+
 });
