@@ -31,4 +31,13 @@ export class Board {
       });
     }
   }
+
+  makeGuess(input) {
+    const indices = this.letterMatch(input);
+    if (indices) {
+      this.replaceNull(input, indices);
+    } else {
+      this.guessesRemaining--;
+    }
+  }
 }
