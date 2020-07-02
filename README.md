@@ -45,6 +45,8 @@ Open via Bash/GitBash:
 5. Open index.html in Chrome or preferred browser:
 `open dist/index.html`
 
+This project uses GIPHY to provide GIFs. If you want the GIFs to work for you while you're developing, you'll need an API Key, which you can get at `https://developers.giphy.com/`. Once you have a GIF Key, you'll need to create a .env file in the project's root directory with the line `API_KEY = {Your Key Here}`
+
 ## Known Bugs
 
 _None currently_
