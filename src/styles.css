@@ -1,0 +1,36 @@
+body {
+  background-image: url(./assets/images/dinoBackground.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  box-sizing: border-box;
+}
+
+.container-fluid {
+  background: rgba(255, 255, 255, .5);
+  box-shadow: 0 15px 20px rgba(0, 0, 0, .5);
+  padding: 50px;
+  margin-top: 50px;
+  border-radius: 3px;
+  min-height: 100vh;
+}
+
+#guesses {
+  color: red;
+}
+
+.row {
+  margin: 20px auto;
+  padding: 5px;
+}
+
+#display, #remainingGuesses, #newGame {
+  font-size: 40px;
+  text-align: center;
+}
+
+#newGame {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
