@@ -2,7 +2,7 @@ import $ from 'jquery';
 import { dinoWinnerGif, dinoLoserGif } from './dinoGIF';
 
 export function winner() {
-  $("#gameOver").html(`<p>You Win!</p><span id='dinoGIF'></span>`);
+  $("#gameOver").html(`<div class="wrapper"><div class="endResult"><p>You Win!</p><span id='dinoGIF'></span></div></div>`);
   (async () => {
     const dinoGIF = await dinoWinnerGif();
     if (dinoGIF) {
@@ -12,7 +12,7 @@ export function winner() {
 }
 
 export function loser() {
-  $("#gameOver").html(`<p>You Lose!</p><span id='meteorGIF'></span>`);
+  $("#gameOver").html(`<div class="wrapper"><div class="endResult"><p>You Lose!</p><span id='meteorGIF'></span></div></div>`);
   (async () => {
     const meteorGIF = await dinoLoserGif();
     if (meteorGIF) {
