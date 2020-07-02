@@ -4,8 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles.css';
 import { Board } from './board';
 import { wordGetter } from './wordGetterService';
-
-
+import { createDisplay, updateDisplay } from './build-display';
 
 $(document).ready(function() {
   $('#newGame').click(function() {
@@ -13,6 +12,7 @@ $(document).ready(function() {
     (async ()=>{
       const dinoWord = await wordGetter();
       board.newWord(dinoWord);
+      createDisplay(board);
     })();
 
     const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
@@ -39,7 +39,9 @@ $(document).ready(function() {
     row3.html(row3HTML);
 
     $(".alphaButton").click(function() {
-      alert($(this).attr("id").slice(14));
+      const letterToReplace = $(this).attr("id").slice(14);
+      board.makeGuess(letterToReplace);
+      updateDisplay(board);
     });
   });
 });
