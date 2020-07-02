@@ -5,6 +5,15 @@ import './styles.css';
 import { Board } from './board';
 import { wordGetter } from './wordGetterService';
 import { createDisplay, updateDisplay } from './build-display';
+import { winner, loser } from './game-over';
+
+function clearDisplay() {
+  $("#alphabetRow1").empty();
+  $("#alphabetRow2").empty();
+  $("#alphabetRow3").empty();
+  $("#display").empty();
+  $("#remainingGuesses").empty();
+}
 
 $(document).ready(function() {
   $('#newGame').click(function() {
@@ -14,7 +23,7 @@ $(document).ready(function() {
       board.newWord(dinoWord);
       createDisplay(board);
     })();
-
+    $("#gameOver").empty();
     const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
     const row1 = $("#alphabetRow1");
     const row2 = $("#alphabetRow2");
@@ -38,10 +47,20 @@ $(document).ready(function() {
     row2.html(row2HTML);
     row3.html(row3HTML);
 
+    $("#remainingGuesses").html(`<p>You have <span id='guesses'>${board.guessesRemaining}</span> guesses remaining until an asteroid hits the Earth</p>`);
+
     $(".alphaButton").click(function() {
       const letterToReplace = $(this).attr("id").slice(14);
       board.makeGuess(letterToReplace);
       updateDisplay(board);
+      $("#guesses").text(board.guessesRemaining);
+      if (board.gameStatus() === 'win') {
+        winner();
+        clearDisplay();
+      } else if (board.gameStatus() === 'loss') {
+        loser();
+        clearDisplay();
+      }
     });
   });
 });
