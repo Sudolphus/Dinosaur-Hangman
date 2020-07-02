@@ -6,7 +6,7 @@ export function winner() {
   (async () => {
     const dinoGIF = await dinoWinnerGif();
     if (dinoGIF) {
-      $('#dinoGIF').html(`<img src='${dinoGIF}' alt='A VICTORIOUS DINOSAUR'>`);
+      $('#dinoGIF').html(`<img src=${dinoGIF} alt='A VICTORIOUS DINOSAUR'>`);
     }
   })();
 }
@@ -16,7 +16,7 @@ export function loser() {
   (async () => {
     const meteorGIF = await dinoLoserGif();
     if (meteorGIF) {
-      $('#meteorGIF').html(`<img src='${meteorGIF}' alt='YOU WENT EXTINCT'>`);
+      $('#meteorGIF').html(`<img src=${meteorGIF} alt='YOU WENT EXTINCT'>`);
     }
   })();
 }

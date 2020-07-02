@@ -3,7 +3,7 @@ export async function dinoWinnerGif() {
   if (!response.ok) {
     return false;
   }
-  const responseJSON = response.json();
+  const responseJSON = await response.json();
   return responseJSON["data"][0]["images"]["original"]["url"];
 }
 
@@ -13,6 +13,6 @@ export async function dinoLoserGif() {
   if (!response.ok) {
     return false;
   }
-  const responseJSON = response.json();
+  const responseJSON = await response.json();
   return responseJSON["data"][0]["images"]["original"]["url"];
 }
